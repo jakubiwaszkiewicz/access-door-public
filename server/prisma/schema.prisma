@@ -1,0 +1,68 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+model Labourer {
+    id               Int                @id @default(autoincrement())
+    createdAt        DateTime           @default(now())
+    updatedAt        DateTime           @updatedAt
+    name             String
+    surname          String
+    email            String             @unique
+    password         String
+    isAdmin          Boolean            @default(false)
+    isOwner          Boolean            @default(false)
+    hasCard          Boolean            @default(false)
+    accesses         Access[]
+    AccessAddedByLog AccessAddedByLog[]
+    DoorOpenedLog    DoorOpenedLog[]
+}
+
+model Door {
+    id               Int                @id @default(autoincrement())
+    createdAt        DateTime           @default(now())
+    updatedAt        DateTime           @updatedAt
+    name             String             @unique
+    description      String
+    accesses         Access[]
+    AccessAddedByLog AccessAddedByLog[]
+    DoorOpenedLog    DoorOpenedLog[]
+}
+
+model Access {
+    id               Int                @id @default(autoincrement())
+    createdAt        DateTime           @default(now())
+    updatedAt        DateTime           @updatedAt
+    doorID           Int
+    door             Door               @relation(fields: [doorID], references: [id])
+    labourer         Labourer           @relation(fields: [labourerID], references: [id])
+    labourerID       Int
+    AccessAddedByLog AccessAddedByLog[]
+}
+
+model AccessAddedByLog {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    access    Access   @relation(fields: [accessID], references: [id])
+    accessID  Int
+    admin     Labourer @relation(fields: [adminID], references: [id])
+    adminID   Int
+    door      Door     @relation(fields: [doorId], references: [id])
+    doorId    Int
+}
+
+model DoorOpenedLog {
+    id         Int      @id @default(autoincrement())
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+    door       Door     @relation(fields: [doorId], references: [id])
+    doorId     Int
+    labourer   Labourer @relation(fields: [labourerID], references: [id])
+    labourerID Int
+}

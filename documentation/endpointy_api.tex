@@ -1,0 +1,243 @@
+\section{Wprowadzenie do API}
+\noindent API naszej aplikacji webowej są kluczowymi elementami
+które umożliwiają interakcje pomiędzy front-endem a bazą danych. Dzięki nim
+użytkownicy mogą wykonywać operacje na danych
+takie jak: tworzenie, odczytywanie, aktualizowanie i usuwanie danych w responsywny sposób.
+
+
+\subsection{Konfiguracja i użycie API}
+\noindent Nasze API zostało zaprojektowane z myślą o łatwości integracji i elastyczności. W tej sekcji przedstawimy kluczowe aspekty konfiguracji i podstawowe kroki potrzebne 
+do rozpoczęcia pracy z naszym API, w tym uwierzytelnianie i podstawowe zapytania.
+
+\subsection{Endpointy API}
+\begin{itemize}
+    \item Tworzenie zasobów (Create Endpoints)
+    \item Uusuwanie zasobów (Delete Endpoints)
+    \item Odczyt zasobów (Read Endpoints)
+    \item Aktualizacja zasobów (Update Endpoints)
+\end{itemize}
+
+\textbf{\large{Dodawanie Pracownika (Labourer)}}
+\begin{itemize}
+    \item \textbf{Metoda:} POST
+    \item \textbf{Ścieżka:} '/labourers'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na dodanie tylko administartorowi nowego pracownika do systemu. Wymaga podania danych takich jak:
+        \begin{itemize}
+        \item \textbf{name} - imię pracownika
+        \item \textbf{surname} - nazwisko pracownika
+        \item \textbf{email} - adres email pracownika
+        \item \textbf{password} - hasło pracownika
+        \end{itemize}
+    \item \textbf{Walidacja:} Sprawdza, czy email i hasło spełniają określone kryteria (np. długość hasła, format emaila)
+    \item \textbf{Odpowiedź:} Status 200 - OK przy udanym dodaniu, 403 Forbidden przy błędach walidacji lub braku uprawnień
+\end{itemize}
+
+\textbf{\large{Dodawanie Drzwi (Door)}}
+\begin{itemize}
+    \item \textbf{Metoda:} POST
+    \item \textbf{Ścieżka:} '/doors'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na dodanie tylko administartorowi nowych drzwi do systemu. Wymaga podania danych takich jak:
+        \begin{itemize}
+        \item \textbf{name} - nazwa drzwi
+        \item \textbf{description} - opis drzwi
+        \end{itemize}
+    \item \textbf{Walidacja:} Sprawdza, czy nazwa drzwi jest unikalna
+    \item \textbf{Odpowiedź:} Status 200 - OK przy udanym dodaniu, 403 Forbidden przy błędach walidacji lub braku uprawnień
+\end{itemize}
+
+\textbf{\large{Dodawanie Uprawnień (Access)}}
+\begin{itemize}
+    \item \textbf{Metoda:} POST
+    \item \textbf{Ścieżka:} '/accesses'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na dodanie tylko administartorowi nowych uprawnień do systemu. Sprawdza, czy dany pracownik i drzwi istnieją w systemie.
+    \item \textbf{Odpowiedź:} Status 200 - OK przy udanym dodaniu, 403 Forbidden przy błędach walidacji lub braku uprawnień
+\end{itemize}
+
+\subsubsection{\textbf{\large{Usuwanie zasobów (Delete Endpoints)}}}
+\textbf{\large{Usuwanie Pracownika (Labourer)}}
+\begin{itemize}
+    \item \textbf{Metoda:} DELETE
+    \item \textbf{Ścieżka:} '/labourers'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na usunięcie tylko administartorowi pracownika z systemu. Wymaga podania email pracownika.
+    \item \textbf{Odpowiedź:} Status 200 - OK przy udanym usunięciu, 403 Forbidden przy błędach walidacji lub braku uprawnień.
+\end{itemize}
+
+\textbf{\large{Usuwanie Drzwi (Door)}}
+\begin{itemize}
+    \item \textbf{Metoda:} DELETE
+    \item \textbf{Ścieżka:} '/doors'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na usunięcie tylko administartorowi drzwi z systemu. Wymaga podania nazwy drzwi.
+    \item \textbf{Odpowiedź:} Status 200 - OK przy udanym usunięciu, 403 Forbidden przy błędach walidacji lub braku uprawnień.
+\end{itemize}
+
+\textbf{\large{Usuwanie Uprawnień (Access)}}
+\begin{itemize}
+    \item \textbf{Metoda:} DELETE
+    \item \textbf{Ścieżka:} '/access'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na usunięcie tylko administartorowi uprawnień z systemu. Wymaga podania id pracownika i id drzwi.
+    \item \textbf{Odpowiedź:} Status 200 - OK przy udanym usunięciu, 403 Forbidden przy błędach walidacji lub braku uprawnień.
+\end{itemize}
+
+\subsubsection{\textbf{\large{Odczyt zasobów (Read Endpoints)}}}
+\textbf{\large{Odczyt wszystkich Pracowników (Labourers)}}
+\begin{itemize}
+    \item \textbf{Metoda:} GET
+    \item \textbf{Ścieżka:} '/labourers'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na odczyt tylko administartorowi pracowników z systemu.
+    \item \textbf{Odpowiedź:} Zwraca listę pracowników w formacie JSON.
+\end{itemize}
+
+\textbf{\large{Odczyt danych o Pracowniku (Labourer)}}
+\begin{itemize}
+    \item \textbf{Metoda:} GET
+    \item \textbf{Ścieżka:} '/labourer'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Umozliwa pracownikowi odczytanie własnych danych z systemu.
+    \item \textbf{Odpowiedź:} Zwraca dane zalogowanego pracownika w formacie JSON.
+\end{itemize}
+
+\textbf{\large{Odczyt wszystkich Drzwi (Door)}}
+\begin{itemize}
+    \item \textbf{Metoda:} GET
+    \item \textbf{Ścieżka:} '/doors'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na odczyt tylko administartorowi wszystkich drzwi z systemu.
+    \item \textbf{Odpowiedź:} Zwraca listę drzwi w formacie JSON.
+\end{itemize}
+
+\textbf{\large{Odczyt dostępów (Access)}}
+\begin{itemize}
+    \item \textbf{Metoda:} GET
+    \item \textbf{Ścieżka:} '/access'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na odczytanie pracownikowi odczytanie informacji o swoich uprawnieniach do drzwi. Z
+    \item \textbf{Odpowiedź:} Zwraca listę uprawnień w formacie JSON, kazdy z dostępów zawiera nazwę drzwi.
+\end{itemize}
+
+\textbf{\large{Odczyt administratorów (Administrators)}}
+\begin{itemize}
+    \item \textbf{Metoda:} GET
+    \item \textbf{Ścieżka:} '/administrators'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający
+    \item \textbf{Opis:} Pozwala na odczyt tylko właścicielowi wszystkich administratorów z systemu.
+    \item \textbf{Odpowiedź:} Zwraca listę administratorów w formacie JSON.
+\end{itemize}
+
+
+\subsubsection{Aktualizacja zasobów (Update Endpoints)}
+\textbf{\large{Dodanie uprawnień Administratora}}
+\begin{itemize}
+    \item \textbf{Metoda:} PUT
+    \item \textbf{Ścieżka:} '/privileges/add'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający z uprawieniami właścicielami.
+    \item \textbf{Opis:} Pozwala właścicielowi aplikacji na przyznanie uprawnień administratora istniejącemu pracownikowi. Wymaga podania adresu email pracownika, który ma otrzymać uprawnienia.
+    \item \textbf{Walidacja:}  Sprawdzane jest, czy zalogowany użytkownik jest właścicielem, czy podany email istnieje w systemie, i czy pracownik nie jest już administratorem.
+    \item \textbf{Odpowiedź:}  Status 200 OK po udanym przyznaniu uprawnień, 403 Forbidden, jeśli użytkownik nie jest właścicielem, 404 Not Found, jeśli pracownik nie istnieje, 400 Bad Request, jeśli pracownik już jest administratorem.
+\end{itemize}
+
+\textbf{\large{Usunięcie uprawnień Administratora}}
+\begin{itemize}
+    \item \textbf{Metoda:} PUT
+    \item \textbf{Ścieżka:} '/privileges/delete'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający z uprawieniami właścicielami.
+    \item \textbf{Opis:} Pozwala właścicielowi aplikacji na odebranie uprawnień administratora istniejącemu pracownikowi. Wymaga podania adresu email pracownika, który ma stracić uprawnienia.
+    \item \textbf{Walidacja:}  Sprawdzane jest, czy zalogowany użytkownik jest właścicielem, czy podany email istnieje w systemie, i czy pracownik jest administratorem.
+    \item \textbf{Odpowiedź:}  Status 200 OK po udanym odebraniu uprawnień, 403 Forbidden, jeśli użytkownik nie jest właścicielem, 404 Not Found, jeśli pracownik nie istnieje, 400 Bad Request, jeśli pracownik nie jest administratorem.
+\end{itemize}
+
+\textbf{\large{Transfer uprawnień Właściciela}}
+\begin{itemize}
+    \item \textbf{Metoda:} PUT
+    \item \textbf{Ścieżka:} '/privileges/transfer'
+    \item \textbf{Autentykacja:} Wymagany token uwierzytelniający z uprawieniami właścicielami.
+    \item \textbf{Opis:} Umożliwia właścicielowi na przekazanie swoich uprawnień innemu administratorowi. Wymaga podania emaila pracownika, który ma otrzymać uprawnienia właściciela.
+    \item \textbf{Walidacja:}  Sprawdzane jest, czy zalogowany użytkownik jest właścicielem, czy pracownik istnieje w systemie, i czy jest administratorem.
+    \item \textbf{Odpowiedź:}  Status 200 OK po udanym transferze uprawnień, 403 Forbidden, jeśli użytkownik nie jest właścicielem, 404 Not Found, jeśli pracownik nie istnieje, 400 Bad Request, jeśli pracownik nie jest administratorem.
+\end{itemize}
+
+
+\subsubsection{Zestawienie graficzne endpointów}
+\begin{center}
+    \begin{tikzpicture}[
+      endpoint/.style={
+        rectangle, 
+        rounded corners, 
+        minimum width=3cm, 
+        minimum height=1cm, 
+        text centered, 
+        draw=black, 
+        fill=blue!30,
+        text width=2.5cm
+      },
+      rolelabel/.style={
+        fill=yellow!30,
+        text centered,
+        minimum width=3cm
+      },
+      arrow/.style={
+        thick,
+        ->,
+        >=Stealth
+      },
+      node distance=0.8cm
+    ]
+    
+    % Labourer Nodes
+    \node (labourerRole) [rolelabel] {Labourer};
+    \node (login) [endpoint, below=of labourerRole] {POST /login \\ Logowanie użytkownika};
+    \node (readSelf) [endpoint, below=of login] {GET /labourer \\ Odczyt danych pracownika};
+    \node (readAccess) [endpoint, below=of readSelf] {GET /access \\ Odczyt uprawnień pracownika};
+    
+    % Administrator Nodes
+    \node (adminRole) [rolelabel, right=of labourerRole] {Administrator};
+    \node (createLabourerAdmin) [endpoint, right=of login] {POST /labourer \\ Dodanie pracownika};
+    \node (deleteLabourerAdmin) [endpoint, below=of createLabourerAdmin] {DELETE /labourer \\ Usunięcie pracownika};
+    \node (createDoorAdmin) [endpoint, below=of deleteLabourerAdmin] {POST /door \\ Dodanie drzwi};
+    \node (deleteDoorAdmin) [endpoint, below=of createDoorAdmin] {DELETE /door \\ Usunięcie drzwi};
+    \node (createAccessAdmin) [endpoint, below=of deleteDoorAdmin] {POST /access \\ Dodanie dostępu};
+    \node (deleteAccessAdmin) [endpoint, below=of createAccessAdmin] {DELETE /access \\ Usunięcie dostępu};
+    \node (readDoorsAdmin) [endpoint, below=of deleteAccessAdmin] {GET /doors \\ Odczyt wszystkich drzwi};
+    \node (readAccessesAdmin) [endpoint, below=of readDoorsAdmin] {GET /accesses \\ Odczyt wszystkich dostępów};
+    \node (readAllAdmin) [endpoint, below=of readAccessesAdmin] {GET /labourers \\ Odczyt wszystkich pracowników};
+    
+    % Owner Nodes
+    \node (ownerRole) [rolelabel, right=of adminRole] {Owner};
+    \node (deletePrivilegesOwner) [endpoint, right=of createLabourerAdmin] {PUT /privileges/delete \\ Usunięcie uprawnień admina};
+    \node (transferPrivilegesOwner) [endpoint, below=of deletePrivilegesOwner] {PUT /privileges/transfer \\ Transfer uprawnień właściciela};
+    \node (ownerEndpoints) [endpoint, below=of transferPrivilegesOwner, yshift=-2cm] {Wszystkie endpointy \\ Administratora i więcej};
+    
+    % Arrows for Labourer
+    \draw [arrow] (labourerRole) -- (login);
+    \draw [arrow] (login) -- (readSelf);
+    \draw [arrow] (readSelf) -- (readAccess);
+    
+    % Arrows for Administrator
+    \draw [arrow] (adminRole) -- (createLabourerAdmin);
+    \draw [arrow] (createLabourerAdmin) -- (deleteLabourerAdmin);
+    \draw [arrow] (deleteLabourerAdmin) -- (createDoorAdmin);
+    \draw [arrow] (createDoorAdmin) -- (deleteDoorAdmin);
+    \draw [arrow] (deleteDoorAdmin) -- (createAccessAdmin);
+    \draw [arrow] (createAccessAdmin) -- (deleteAccessAdmin);
+    \draw [arrow] (deleteAccessAdmin) -- (readDoorsAdmin);
+    \draw [arrow] (readDoorsAdmin) -- (readAccessesAdmin);
+    \draw [arrow] (readAccessesAdmin) -- (readAllAdmin);
+    
+    % Box around Labourer Nodes
+    \node (labourerBox) [draw=red, dashed, fit=(labourerRole) (login) (readSelf) (readAccess), inner sep=0.3cm] {};
+    
+    % Box around Administrator Nodes
+    \node (adminBox) [draw=red, dashed, fit=(adminRole) (createLabourerAdmin) (deleteLabourerAdmin) (createDoorAdmin) (deleteDoorAdmin) (createAccessAdmin) (deleteAccessAdmin) (readDoorsAdmin) (readAccessesAdmin) (readAllAdmin), inner sep=0.3cm] {};
+    
+    % Box around Owner Nodes
+    \node (ownerBox) [draw=red, dashed, fit=(ownerRole) (deletePrivilegesOwner) (transferPrivilegesOwner) (ownerEndpoints), inner sep=0.3cm] {};
+    
+    \end{tikzpicture}
+    \end{center}
+    

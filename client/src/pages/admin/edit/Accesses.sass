@@ -1,0 +1,120 @@
+$box-bg: #F4EAE0
+$font-color: #000000
+$font-bungee-shade: "Bungee Shade", cursive
+$font-bungee-hairline: 'Bungee Hairline', cursive
+$font-montserrat: 'Montserrat', sans-serif // Added Montserrat font
+$button-hover-bg: #333
+$border-color: #ddd
+$red: #f44336
+$dark-red: #d32f2f
+$green: #4CAF50
+$dark-green: #45a049
+
+.disabled
+  pointer-events: none
+  cursor: not-allowed
+  opacity: 0.65
+  filter: alpha(opacity=65)
+  -webkit-box-shadow: none
+  box-shadow: none
+
+.add-access-form
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  align-items: center
+  margin: 10px 0
+  gap: 10px
+  width: 500px
+  select
+    padding: 8px
+    border: 1px solid #ccc
+    border-radius: 4px
+    font-size: 16px
+  option
+    padding: 8px
+    border: 1px solid #ccc
+    border-radius: 4px
+    font-size: 16px
+    &:hover
+      background-color: $button-hover-bg
+  input
+    padding: 8px
+    border: 1px solid #ccc
+    border-radius: 4px
+    font-size: 16px
+
+  button
+    padding: 10px
+    background-color: $green
+    color: white
+    border: none
+    border-radius: 4px
+.access-container
+  margin-top: 70px
+  display: flex
+  flex-flow: column nowrap
+  align-items: center
+  justify-content: center
+  padding: 0 1rem
+  background: linear-gradient(155deg, #ffffff, #F4EAE0)
+  p
+    font-size: 0.9em
+    font-weight: 530
+    font-family: 'Montserrat', sans-serif
+    margin-bottom: 15px
+  h1
+    font-family: $font-bungee-shade
+    text-align: center
+    margin: 0
+    font-size: 3em
+  h2
+    font-family: $font-montserrat
+    text-align: center
+    font-size: 2em
+    margin-bottom: 20px
+    color: $font-color
+    line-height: 1.1
+    margin: 25px 0 0 0
+  .delete-access-container
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) // tworzy responsywne kolumny, które dostosowują się do szerokości ekranu
+    gap: 20px
+    padding: 20px
+    align-items: start
+    justify-content: center
+    height: auto // zamiast wysokości pełnego widoku, co pozwala na naturalne rozszerzenie
+    min-height: 10vh // zapewnia, że będzie to co najmniej pełna wysokość widoku
+    width: 100% // zajmuje całą dostępną szerokość
+    box-sizing: border-box // upewnia się, że padding i border są wliczone do szerokości i wysokości
+
+  .delete-access__labourer
+    background: linear-gradient(155deg, #ffffff, $box-bg)
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5)
+    border-radius: 8px
+    padding: 15px
+    margin: 5px
+    margin-bottom: 100px
+    text-align: center
+
+    // Dostosowanie dla dostępności
+    &:focus-within
+      box-shadow: 0 0 0 3px $green // Wyróżnienie dla elementów w fokusie
+
+    // Dostosowanie dla interakcji
+    &:hover
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.6)
+
+  .remove-button
+    padding: 3px 15px
+    border: none
+    font-size: 0.9em
+    border-radius: 15px
+    color: white
+    background-color: #bb342a
+    cursor: pointer
+    transition: background-color 0.2s, transform 0.2s
+    font-weight: bold
+    &:hover
+      background-color: $dark-red
+    // Center the button

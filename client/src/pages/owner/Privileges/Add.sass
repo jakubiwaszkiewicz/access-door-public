@@ -1,0 +1,155 @@
+// Add.sa$font-montserrat: 'Montserrat', sans-serif // Added Montserrat fontss
+$font-montserrat: 'Montserrat', sans-serif // Added Montserrat font
+$font-bungee-shade: "Bungee Shade", cursive
+.add-container
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+    font-family: 'Montserrat', sans-serif
+    background: linear-gradient(155deg, #ffffff, #F4EAE0)
+    min-height: 80vh
+    padding-top: 80px
+
+.labourers-list
+    width: 80%
+    max-width: 760px
+    margin: 0 auto
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+    grid-gap: 20px
+    padding: 40px
+
+.add-header
+    font-family: $font-bungee-shade
+    text-align: center
+    margin: 0
+    font-weight: 700
+    font-size: 3em
+
+.add-subtext
+    font-family: $font-montserrat
+    text-align: center
+    margin-bottom: 2rem
+    color: black
+    max-width: 500px
+.labourer-card
+    background: #ffffff
+    border: 1px solid #dedede
+    border-radius: 8px
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background: linear-gradient(100deg, #ffffff, #F4EAE0)
+    padding: 20px
+    transition: all 0.3s ease
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.7)
+
+    &.owner
+        border-color: gold
+        border-width: 5px
+        border-style: solid
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.7)
+
+    &:hover
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15)
+
+.labourer-email
+    font-weight: 600
+    color: #000000
+    margin-bottom: 15px
+    font-size: 0.8em
+    font-family: $font-montserrat
+
+.labourer-status
+    display: flex
+    justify-content: center
+    align-items: center
+
+    span
+        justify-content: center
+        align-items: center
+        font-weight: 600
+        font-family: $font-montserrat
+        background: linear-gradient(to right, #00c6ff, #0072ff)
+        color: white
+        padding: 5px 10px
+        font-size: 0.8em
+
+.labourer-actions
+    margin-top: 20px
+    display: flex
+    justify-content: center
+    gap: 10px
+
+button
+    padding: 10px 20px
+    border: none
+    border-radius: 30px
+    cursor: pointer
+    font-weight: bold
+    font-size: 0.7em
+    letter-spacing: 0.1em
+    text-transform: uppercase
+    color: white
+    background-size: 150% auto
+    transition: all 0.5s ease
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2)
+    position: relative
+    overflow: hidden
+
+.add-admin
+    padding: 3px 15px
+    border: none
+    font-size: 0.9em
+    border-radius: 15px
+    color: white
+    background-color: #11b302
+    cursor: pointer
+    transition: background-color 0.2s, transform 0.2s
+    font-weight: bold
+.set-owner
+    padding: 3px 15px
+    border: none
+    font-size: 0.9em
+    border-radius: 15px
+    color: white
+    background-color: #bb342a
+    cursor: pointer
+    transition: background-color 0.2s, transform 0.2s
+    font-weight: bold
+
+.confirm-dialog-overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    background: rgba(0, 0, 0, 0.6)
+    z-index: 10
+    p
+        font-family: $font-montserrat
+        font-weight: 600
+        font-size: 1.3em
+
+.confirm-dialog
+    background: #fff
+    padding: 40px
+    border-radius: 15px
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2)
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+    z-index: 11
+    max-width: 80%
+
+.confirm-yes
+    background-image: linear-gradient(to right, #34d058 0%, #28a745 100%)
+
+.confirm-no
+    background-image: linear-gradient(to right, #cb2431 0%, #a40e26 100%)

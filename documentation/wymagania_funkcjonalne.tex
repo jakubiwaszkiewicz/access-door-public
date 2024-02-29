@@ -1,0 +1,206 @@
+\section{Wymagania funkcjonalne}
+\subsection{Logowanie}
+\begin{enumerate}
+    \item \textbf{Opis:} Użytkownik może zalogować się do systemu.
+    \item \textbf{Aktorzy:} Niezalogowany użytkownik.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Użytkownik wypełnia formularz logowania.
+        \item Użytkownik klika przycisk "Zaloguj".
+        \item System sprawdza poprawność danych.
+        \item System loguje użytkownika.
+    \end{enumerate}
+    \item \textbf{Scenariusz alternatywny:} 
+    \begin{enumerate}
+        \item Użytkownik wypełnia formularz logowania.
+        \item Użytkownik klika przycisk "Zaloguj".
+        \item System sprawdza poprawność danych.
+        \item System wyświetla komunikat o błędzie.
+    \end{enumerate}
+\end{enumerate}
+\subsection{Wylogowanie}
+\begin{enumerate}
+    \item \textbf{Opis:} Użytkownik może wylogować się z systemu.
+    \item \textbf{Aktorzy:} Zalogowany użytkownik.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Użytkownik klika przycisk "Wyloguj" w panelu sterowania.
+        \item System wylogowuje użytkownika i przekierowuje na stronę logowania.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Tworzenie drzwi}
+\begin{enumerate}
+    \item \textbf{Opis:} Administrator może dodać drzwi do systemu.
+    \item \textbf{Aktorzy:} Administrator.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj drzwi" w panelu sterowania.
+        \item System wyświetla formularz dodawania drzwi.
+        \item Administrator wypełnia formularz dodawania drzwi.
+        \item Administrator klika przycisk "Dodaj".
+        \item System sprawdza poprawność danych.
+        \item System dodaje drzwi do systemu.
+    \end{enumerate}
+    \item \textbf{Scenariusz alternatywny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj drzwi" w panelu sterowania.
+        \item System wyświetla formularz dodawania drzwi.
+        \item Administrator wypełnia formularz dodawania drzwi.
+        \item Administrator klika przycisk "Dodaj".
+        \item System sprawdza poprawność danych.
+        \item System wyświetla komunikat o błędzie.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Usuwanie drzwi}
+\begin{enumerate}
+    \item \textbf{Opis:} Administrator może usunąć drzwi z systemu.
+    \item \textbf{Aktorzy:} Administrator.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj drzwi" w panelu sterowania.
+        \item System wyświetla formularz usuwania drzwi.
+        \item Administrator wypełnia formularz usuwania drzwi.
+        \item Administrator klika przycisk "Usuń".
+        \item System sprawdza poprawność danych.
+        \item System usuwa drzwi z systemu.
+    \end{enumerate}
+    \item \textbf{Scenariusz alternatywny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj drzwi" w panelu sterowania.
+        \item System wyświetla listę isniejących drzwi
+        \item Administrator klika przycisk "Usuń".
+        \item System sprawdza poprawność danych.
+        \item System wyświetla komunikat o błędzie.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Tworzenie konta pracowników}
+\begin{enumerate}
+    \item \textbf{Opis:} Administrator może dodać konto pracownika do systemu.
+    \item \textbf{Aktorzy:} Administrator.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj pracowników" w panelu sterowania.
+        \item System wyświetla formularz dodawania pracownika.
+        \item Administrator wypełnia formularz dodawania pracownika.
+        \item Administrator klika przycisk "Dodaj".
+        \item System sprawdza poprawność danych.
+        \item System dodaje konto pracownika do systemu.
+    \end{enumerate}
+    \item \textbf{Scenariusz alternatywny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj pracowników" w panelu sterowania.
+        \item System wyświetla formularz dodawania pracownika.
+        \item Administrator wypełnia formularz dodawania pracownika.
+        \item Administrator klika przycisk "Dodaj".
+        \item System sprawdza poprawność danych.
+        \item System wyświetla komunikat o błędzie.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Usuwanie konta pracownika}
+\begin{enumerate}
+    \item \textbf{Opis:} Administrator może usunąć konto pracownika z systemu.
+    \item \textbf{Aktorzy:} Administrator.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj pracowników" w panelu sterowania.
+        \item System wyświetla liste isniejących pracowników.
+        \item Administrator klika przycisk "Usuń".
+        \item System sprawdza poprawność danych.
+        \item System usuwa konto pracownika z systemu.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Przyznawanie uprawnień pracownikom do drzwi}
+\begin{enumerate}
+    \item \textbf{Opis:} Administrator może przyznać uprawnienia pracownikowi do drzwi.
+    \item \textbf{Aktorzy:} Administrator.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj dostępy" w panelu sterowania.
+        \item System wyświetla dwie listy rozwijane: lista pracowników i lista drzwi.
+        \item Administrator wybiera pracownika i drzwi, które chce mu przydzielić.
+        \item Administrator klika przycisk "Przydziel dostęp".
+        \item System sprawdza poprawność danych.
+        \item System zapisuje zmiany.
+    \end{enumerate}
+    \item \textbf{Scenariusz alternatywny:}
+    \item \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj dostępy" w panelu sterowania.
+        \item System wyświetla dwie listy rozwijane: lista pracowników i lista drzwi.
+        \item Administrator wybiera pracownika i drzwi, które chce mu przydzielić.
+        \item Administrator klika przycisk "Przydziel dostęp".
+        \item System sprawdza poprawność danych.
+        \item System wyświetla komunikat o błędzie.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Usuwanie uprawnień pracownikom do drzwi}
+\begin{enumerate}
+    \item \textbf{Opis:} Administrator może usunąć uprawnienia pracownikowi do drzwi.
+    \item \textbf{Aktorzy:} Administrator.
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk "Edytuj dostępy" w panelu sterowania.
+        \item System wyświetla listę isniejących uprawnień.
+        \item Administrator wybiera pracownika i drzwi, których uprawnienia chce mu odebrać.
+        \item Administrator klika przycisk "Usuń".
+        \item System sprawdza poprawność danych.
+        \item System zapisuje zmiany.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Wyświetlanie dostępów pracownika}
+\begin{enumerate}
+    \item \textbf{Opis:} Pracownik może wyświetlić listę drzwi, do których ma dostęp pracownik.
+    \item \textbf{Aktorzy:} Pracownik
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Administrator klika przycisk ``Dostępy" w panelu sterowania.
+        \item System wyświetla listę drzwi, do których ma dostęp pracownik.
+    \end{enumerate}
+\end{enumerate}
+
+todo: dodac funkcjonalnosc gubienia karty
+% dodamy ta funckoinalnosc w przyszlosci
+% \subsection{Zgłoszenie zgubienia karty dostępu}
+% \begin{enumerate}
+%     \item \textbf{Opis:} Pracownik może zgłosić zgubienie karty dostępu.
+%     \item \textbf{Aktorzy:} Pracownik
+%     \item \textbf{Scenariusz główny:} 
+%     \begin{enumerate}
+%         \item Pracownik klika przycisk "Zgłoś zgubienie karty" w panelu sterowania.
+%         \item System wyświetla formularz zgłoszenia zgubienia karty.
+%         \item Pracownik wypełnia formularz zgłoszenia zgubienia karty.
+%         \item Pracownik klika przycisk "Zgłoś".
+%         \item System sprawdza poprawność danych.
+%         \item System zapisuje zgłoszenie.
+%     \end{enumerate}
+%     \item \textbf{Scenariusz alternatywny:} 
+%     \begin{enumerate}
+%         \item Pracownik klika przycisk "Zgłoś zgubienie karty" w panelu sterowania.
+%         \item System wyświetla formularz zgłoszenia zgubienia karty.
+%         \item Pracownik wypełnia formularz zgłoszenia zgubienia karty.
+%         \item Pracownik klika przycisk "Zgłoś".
+%         \item System sprawdza poprawność danych.
+%         \item System wyświetla komunikat o błędzie.
+%     \end{enumerate}
+% \end{enumerate}
+
+\subsection{Zmiana właściciela systemu}
+\begin{enumerate}
+    \item \textbf{Opis:} Właściciel zmienia właściciela systemu.
+    \item \textbf{Aktorzy:} Właściciel
+    \item \textbf{Scenariusz główny:} 
+    \begin{enumerate}
+        \item Właściciel klika przycisk ``Dodaj przywieleje" w panelu sterowania.
+        \item System wyświetla liste administartorów
+        \item Administrator klika przycisk ``Ustaw jako ownera".
+        \item System odbiera uprawnienia właściciela od aktualnego właściciela.
+        \item System nadaje uprawnienia właściciela wybranemu administratorowi.
+        \item System przeładuje stronę i były właściciel jest teraz zwykłym administratorem i nie możliwości zmiany właściciela.
+    \end{enumerate}
+\end{enumerate}

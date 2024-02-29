@@ -1,0 +1,67 @@
+// Delete.sass
+$background-gradient-start: #ffffff
+$background-gradient-end: #F4EAE0
+$font-color: #000000
+$font-stack: 'Montserrat', sans-serif
+$button-bg: #FF616D
+$button-hover-bg: #D64550
+$font-bungee-shade: "Bungee Shade", cursive
+
+.delete-container
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+    font-family: 'Montserrat', sans-serif
+    background: linear-gradient(155deg, #ffffff, #F4EAE0)
+    min-height: 80vh
+    padding-top: 80px
+
+.delete-header
+    font-family: $font-bungee-shade
+    text-align: center
+    margin: 0
+    font-weight: 700
+    font-size: 3em
+
+.delete-subtext
+    font-family: $font-stack
+    text-align: center
+    margin-bottom: 2rem
+    color: black
+    max-width: 500px
+
+.admins-list
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    align-items: center
+    max-width: 12000px
+    gap: 10px
+    padding: 0px
+
+    .admin-item
+        width: 80%
+        max-width: 1000px
+        margin: auto
+        padding: 20px
+        border-radius: 8px
+        background: linear-gradient(100deg, #ffffff, #F4EAE0)
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.7)
+        text-align: center
+
+    span
+        margin: 5px 0
+        font-family: $font-stack
+        font-size: 1.2em
+
+    .revoke-btn
+        margin: 5px
+        font-weight: 600
+        font-size: 0.85em
+        padding: 10px 20px
+        border: none
+        border-radius: 5px
+        background-color: #bb342a
+        color: white
+        cursor: pointer

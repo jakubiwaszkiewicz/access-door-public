@@ -1,0 +1,32 @@
+\section{Konfiguracja serwera}
+\begin{enumerate}
+    \item Środowisko i konfiguracja:
+        \begin{itemize}
+            \item dotenv - Wykorzystanie pakietu dotenv do zarządzania 
+            zmiennymi środowiskowymi, co ułatwia konfigurację aplikacji bez bezpośredniego umieszczania wrażliwych danych w kodzie.
+            \item Port - Serwer jest skonfigurowany do nasłuchiwania na porcie określonym w zmiennej środowiskowej PORT, z domyślnym fallbackiem na port 3002.
+        \end{itemize}
+    \item Middleware
+        \begin{itemize}
+            \item CORS: Konfiguracja Cross-Origin Resource Sharing (CORS) ogranicza żądania do zaufanych domen (tutaj http://localhost:5173), zezwalając na metody HTTP takie jak GET, POST, DELETE itp. Jest to istotne z punktu widzenia 
+            \item JSON Parser: Użycie express.json() jako middleware do parsowania przychodzących żądań z treścią w formacie JSON.
+        \end{itemize}
+    \item Routing
+        \begin{itemize}
+            \item Read Routes: Import i użycie route'ów do odczytu danych (readRoutes) pod ścieżką /api/read.
+            \item Create Routes: Import i użycie route'ów do tworzenia danych (createRoutes) pod ścieżką /api/create.
+            \item Delete Routes: Import i użycie route'ów do usuwania danych (deleteRoutes) pod ścieżką /api/delete.
+            \item Update Routes: Import i użycie route'ów do aktualizacji danych (updateRoutes) pod ścieżką /api/update.
+        \end{itemize}
+    \item Generowanie Tokenów JWT
+        \begin{itemize}
+            \item Tokeny te są wykorzystywane do uwierzytelniania i zarządzania sesjami użytkowników.
+        \end{itemize}
+    \item Konfiguracja ORM Prisma
+        \begin{itemize}
+            \item Prisma jest ORM (Object Relational Mapping) do Node.js i TypeScript, który umożliwia bezpośredni dostęp do bazy danych z poziomu kodu źródłowego aplikacji.
+            \item Prisma Client jest generowany na podstawie schematu bazy danych, który jest zdefiniowany w pliku schema.prisma.
+            \item Użyto MySQL jako bazy danych.
+            \item Prisma jest skonfigurowana do połączenia z bazą danych za pomocą zmiennej środowiskowej DATABASE\_URL.
+        \end{itemize}
+\end{enumerate}

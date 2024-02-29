@@ -1,0 +1,86 @@
+.doors-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  font-family: 'Montserrat', sans-serif
+  background: linear-gradient(155deg, #ffffff, #F4EAE0)
+  min-height: 80vh
+  padding-top: 80px
+
+.add-door-form
+  margin-bottom: 50px
+  padding: 20px
+  border-radius: 8px
+  background: linear-gradient(155deg, #ffffff, #F4EAE0)
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.7)
+  text-align: center
+
+  h2
+    margin-bottom: 25px
+
+  input
+    margin: 5px
+    padding: 10px
+    border: 1px solid #ccc
+    border-radius: 5px
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(255, 255, 255, 0.7)
+
+  .add-button
+    margin: 5px
+    font-weight: 600
+    font-size: 0.85em
+    padding: 10px 20px
+    border: none
+    border-radius: 5px
+    background-color: #4CAF50
+    color: white
+    cursor: pointer
+
+.existing-doors
+  width: 80%
+  max-width: 1000px
+  margin: auto
+  padding: 20px
+  border-radius: 8px
+  background: linear-gradient(100deg, #ffffff, #F4EAE0)
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.7)
+  text-align: center
+
+  h2
+    margin-bottom: 25px
+
+.doors-list
+  display: block flex
+  flex-wrap: wrap
+  justify-content: space-evenly
+  gap: 20px
+
+.door-card
+  border-radius: 8px
+  background: linear-gradient(145deg, #ffffff, #e6e6e6)
+  width: 150px
+  padding: 4px 2px
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.7)
+  transition: transform 0.2s, box-shadow 0.2s
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: 10px
+
+  .door-name
+    font-size: 0.9em
+    font-weight: 530
+    font-family: 'Montserrat', sans-serif
+    margin-bottom: 15px
+
+  .remove-button
+    padding: 3px 15px
+    border: none
+    font-size: 0.9em
+    border-radius: 15px
+    color: white
+    background-color: #bb342a
+    cursor: pointer
+    transition: background-color 0.2s, transform 0.2s
+    font-weight: bold

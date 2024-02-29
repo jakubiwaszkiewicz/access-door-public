@@ -1,0 +1,255 @@
+
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+    "email": "kyle.smith@gmail.com",
+    "password": "123"
+}
+
+
+# {
+#     "name": "Marcinek3",
+#     "surname": "Jankowiak3",
+#     "password": "1234567893",
+#     "email": "marcinek3@gmail.com"
+# }
+
+
+###
+
+
+GET http://localhost:3000/api/read/labourers
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1OTMyMzR9.5yXNLMr0YhN2c1VQfJCHaJ2T6Z6OHrMH8e2NFf0P7ME
+
+
+
+
+###
+
+
+GET http://localhost:3000/api/read/labourer
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1NjgxNzh9.mhQ8UGfMDwDdUJEAB8S8haJQFVtJmN2MaG1ppbfJjQU
+
+
+###
+
+
+POST http://localhost:3000/api/create/labourer
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDQ4MDc3OTl9.gxOW_lUYQlhlNrXiWMkOnd4VR1yquHjf5s20Bw5nv1k
+Content-Type: application/json
+
+{
+    "name": "TwójStary",
+    "surname": "Gostyniak",
+    "password": "55556944444",
+    "email": "twojstary@gmail.com"
+}
+
+
+###
+
+
+DELETE http://localhost:3000/api/delete/labourer
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1NjcxOTd9.6pgBu5f5EjBMAeBpbzXiVq-7qqT8Ubtjq0-GgEtHE7c
+Content-Type: application/json
+
+{
+    "email": "twojstary@gmail.com"
+}
+
+
+###
+
+
+PUT http://localhost:3000/api/update/privileges/add
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1NjcxOTd9.6pgBu5f5EjBMAeBpbzXiVq-7qqT8Ubtjq0-GgEtHE7c
+Content-Type: application/json
+
+{
+    "email": "marcinek3@gmail.com"
+}
+
+###
+
+PUT http://localhost:3000/api/update/privileges/delete
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDY2MzA1NDN9.t9sXePv4ysczbdtSIlzdk7OIEaJgt1mjj8L_qvNMO-M
+Content-Type: application/json
+
+{
+    "email": "krzysiek.marsza@gmail.com"
+}
+
+
+###
+
+
+PUT http://localhost:3000/api/update/privileges/transfer
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMzQ1Njc4OTMiLCJlbWFpbCI6Im1hcmNpbmVrM0BnbWFpbC5jb20iLCJpYXQiOjE3MDI1Nzg0ODh9.DzqeuOVIrXf7Uu87Af1CLLzLtazyO20_2JhaL3F4rcc
+Content-Type: application/json
+
+{
+    "email": "kyle.smith@gmail.com"
+}
+
+########################################################################################################################
+
+
+GET http://localhost:3000/api/read/doors
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1ODM5OTB9.O6v6ot_aXG44NP0ZpwP3YfJxRBbA6uJXRbNOB3BXQDU
+
+
+
+
+###
+
+
+
+POST http://localhost:3000/api/create/door
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1ODA3NDB9.3ko6q5HjLcOyuar6RvEMvDWJNTWLHmT1WP2NyUAPs8k
+Content-Type: application/json
+
+{
+    "name": "Door 69",
+    "description": "Hehe"
+}
+
+###
+
+
+DELETE http://localhost:3000/api/delete/door
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1ODA3NDB9.3ko6q5HjLcOyuar6RvEMvDWJNTWLHmT1WP2NyUAPs8k
+Content-Type: application/json
+
+{
+    "name": "Door 1"
+}
+
+
+
+###
+
+
+
+POST http://localhost:3000/api/create/access
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1OTYwNzZ9.zLFJyyUuTwmg_28tYURbUYmC4f-VSgRxwcSKfaqFRsA
+Content-Type: application/json
+
+{
+    "email": "marcinek3@gmail.com",
+    "name": "Door 3"
+}
+
+
+###
+
+DELETE http://localhost:3000/api/delete/access
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1OTYwNzZ9.zLFJyyUuTwmg_28tYURbUYmC4f-VSgRxwcSKfaqFRsA
+Content-Type: application/json
+
+{
+    "email": "marcinek3@gmail.com",
+    "name": "Door 3"
+}
+
+
+###
+
+POST http://localhost:3000/api/create/open
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1OTYwNzZ9.zLFJyyUuTwmg_28tYURbUYmC4f-VSgRxwcSKfaqFRsA
+Content-Type: application/json
+
+{
+    "name": "Door 1"
+}
+
+###
+###
+
+
+
+
+
+
+
+###
+
+
+GET http://localhost:3000/api/read/access
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1NjcxOTd9.6pgBu5f5EjBMAeBpbzXiVq-7qqT8Ubtjq0-GgEtHE7c
+
+
+
+
+###
+
+
+
+GET http://localhost:3000/api/read/accesses
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IjEyMyIsImVtYWlsIjoia3lsZS5zbWl0aEBnbWFpbC5jb20iLCJpYXQiOjE3MDI1NjcxOTd9.6pgBu5f5EjBMAeBpbzXiVq-7qqT8Ubtjq0-GgEtHE7c
+
+###
+
+
+
+
+
+
+###
+
+
+
+
+
+###
+
+GET http://localhost:3000/api/read/doors
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZS5TbWl0aCIsInBhc3N3b3JkIjoiMTIzIiwiZW1haWwiOiJreWxlLnNtaXRoQGdtYWlsLmNvbSIsImlhdCI6MTcwMDMzNDI2OSwiZXhwIjoxNzAwMzM1MTY5fQ.-vr2QJIJy5vRp8tcpq6qXNimynTvjuJyFPTLglhXI3s
+
+
+
+###
+
+
+GET http://localhost:3000/api/notifications
+authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZS5TbWl0aCIsInBhc3N3b3JkIjoiMTIzIiwiZW1haWwiOiJreWxlLnNtaXRoQGdtYWlsLmNvbSIsImlhdCI6MTcwMDMzNDI2OSwiZXhwIjoxNzAwMzM1MTY5fQ.-vr2QJIJy5vRp8tcpq6qXNimynTvjuJyFPTLglhXI3s
+
+
+
+###
+
+
+
+
+
+
+###
+
+
+
+
+
+
+
+###
+
+
+
+# {
+#     "email": "kyle.smith@gmail.com",
+#     "password": "123"
+# }
+
+# {
+#     "name": "Jim",
+#     "surname": "Kowalski",
+#     "password": "12345678",
+#     "email": "jim.kowaliski@gmail.com"
+# }
+
+# {
+#     "name": "Marcinek3",
+#     "surname": "Jankowiak3",
+#     "password": "1234567893",
+#     "email": "marcinek3@gmail.com"
+# }
