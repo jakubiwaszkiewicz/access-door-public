@@ -86,24 +86,24 @@ While doing this project this software is crucial (c) or optional.
 
 Credentials for AWS MySQL Database:
 <br />
-endpoint:`mappsdbv3.cyw1dvcizo18.eu-north-1.rds.amazonaws.com`
+endpoint:`*****`
 <br />
-login: `admin`
+login: `*****`
 <br />
-password: `GY4D5Gxmrp5RDe`
+password: `*****`
 <br />
 
 .env file for MySQL for express.js:
 <br/>
-`DB_HOST = mappsdbv3.cyw1dvcizo18.eu-north-1.rds.amazonaws.com`
+`DB_HOST = *****`
 <br/>
-`DB_USER = mapps_pwr`
+`DB_USER = *****`
 <br/>
-`DB_PASSWORD = GY4D5Gxmrp5RDe`
+`DB_PASSWORD = *****`
 <br/>
-`DB_DATABASE = Mapps`
+`DB_DATABASE = *****`
 <br/>
-`DB_PORT = 3306`
+`DB_PORT = *****`
 
 ### 3.2 Front-end
 
