@@ -1,4 +1,4 @@
-# Mobile applications project "Access to Door"
+# Mobile applications project "Access to Door" by Jakub Iwaszkiewicz & Krzysztof Marszałek
 
 Table of Content
 
